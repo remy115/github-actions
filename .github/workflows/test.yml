@@ -35,15 +35,16 @@ jobs:
         REACT_APP_SHOPIFY_API_KEY: ${{ secrets.TEST_SHOPIFY_API_KEY }}
       run: npm run build --if-present
       working-directory: ./${{ matrix.project }}
+      
+    - name: Run build script
+      if: ${{ matrix.project == 'api' }}
+      run: ./.github/scripts/build.sh ${{ matrix.project }}
+      shell: bash
 
     - name: Test
       run: npm run test --if-present
       working-directory: ./${{ matrix.project }}
 
-    - name: Run build script
-      if: ${{ matrix.project == 'admin' }}
-      run: ./.github/scripts/build.sh ${{ matrix.project }}
-      shell: bash
 
 
     # - name: Setup deploy variables
