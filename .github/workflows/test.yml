@@ -41,7 +41,7 @@ jobs:
       working-directory: ./${{ matrix.project }}
 
     - name: Run build script
-      run: ./.github/scripts/build.sh
+      run: ./.github/scripts/build.sh ${{ matrix.project }}
       shell: bash
 
 
