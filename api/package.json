@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "Just to test github actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Remyx",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
