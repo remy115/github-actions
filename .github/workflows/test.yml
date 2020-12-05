@@ -41,6 +41,7 @@ jobs:
       working-directory: ./${{ matrix.project }}
 
     - name: Run build script
+      if: ${{ matrix.project == 'admin' }}
       run: ./.github/scripts/build.sh ${{ matrix.project }}
       shell: bash
 
